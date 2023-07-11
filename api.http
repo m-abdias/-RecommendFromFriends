@@ -1,0 +1,13 @@
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/person
+
+###
+POST http://localhost:3000/person
+Content-Type: "application/json"
+
+{
+    "cpf": "38112198802",
+    "name": "Mariana Abdias"
+}
