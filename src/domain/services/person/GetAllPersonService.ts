@@ -1,7 +1,7 @@
-import people from '../../data/dataPerson'
+import Person from '../../interfaces/person';
 
 export default class GetAllPersonService {
-  getAllPerson(): typeof people {
-    return people;
+  getAllPerson(person: Person[]): typeof person {
+    return person;
   }
 }
