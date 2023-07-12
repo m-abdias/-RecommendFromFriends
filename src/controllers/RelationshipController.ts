@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import CreateRelationshipService from "../domain/services/relationship/CreateRelationshipService";
 import ICreateRelationshipDTO from "../domain/dtos/relationship/ICreateRelationshipDTO";
-import { people } from '../../db'
+import { people } from "../../db";
 
 export default class PersonController {
   private createRelationshipService: CreateRelationshipService;
@@ -18,10 +18,10 @@ export default class PersonController {
         people,
         res
       );
-
-      res.status(201).json({ message: "Relacionamento criado com sucesso!" });
     } catch (error) {
-      res.status(400).json({ error: (error as Error).message });
+      res
+        .status(404)
+        .json({ error: "Não foi possível criar relação com usuário" });
     }
   }
 }

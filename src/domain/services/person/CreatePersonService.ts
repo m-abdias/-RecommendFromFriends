@@ -19,16 +19,16 @@ class CreatePersonService {
         });
       return;
     } else if(!cpfExists) {
-      const newPeople = {
+      const newPerson = {
         id: generator_id,
         cpf,
         name,
         relationship: []
       };
-      person.push(newPeople);
+      person.push(newPerson);
       res
         .status(201)
-        .json({ message: "Cadastro realizado com Sucesso!", newPeople });
+        .json({ message: "Cadastro realizado com Sucesso!", newPerson });
       return
     } else {
       res
