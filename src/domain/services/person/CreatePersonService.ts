@@ -4,39 +4,35 @@ import ICreatePersonDTO from "../../dtos/person/ICreatePersonDTO";
 import Person from "../../interfaces/person";
 
 class CreatePersonService {
-  async createPerson(data: ICreatePersonDTO, person: Person[], res: Response): Promise<void> {
+  async createPerson(data: ICreatePersonDTO, person: Person[], res: Response) {
     const { cpf, name } = data;
     const generator_id = uuidv4();
 
-    const cpfExists = person.some(obj => obj.cpf === cpf);
+    const cpfExists = person.some((obj) => obj.cpf === cpf);
 
     if (cpf.toString().length !== 11) {
-      res
-        .status(400)
-        .json({
-          error:
-            "CPF Inválido. O CPF informado não possui 11 dígitos, digite um CPF válido",
-        });
+      res.status(400).json({
+        error:
+          "CPF Inválido. O CPF informado não possui 11 dígitos, digite um CPF válido",
+      });
       return;
-    } else if(!cpfExists) {
+    } else if (!cpfExists) {
       const newPerson = {
         id: generator_id,
         cpf,
         name,
-        relationship: []
+        relationship: [],
       };
       person.push(newPerson);
       res
         .status(201)
         .json({ message: "Cadastro realizado com Sucesso!", newPerson });
-      return
     } else {
       res
-      .status(400)
-      .json({ error: "Já possui cadastro para o CPF informado." });
-    return;
+        .status(400)
+        .json({ error: "Já possui cadastro para o CPF informado." });
+      return;
     }
-
   }
 }
 

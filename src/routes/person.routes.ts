@@ -2,7 +2,7 @@ import { Router } from "express";
 import PersonController from "../controllers/PersonController";
 import CreatePersonService from "../domain/services/person/CreatePersonService";
 import GetAllPersonService from "../domain/services/person/GetAllPersonService";
-import GetPersonByCpfService from "../domain/services/person/GetPersonByCPFService";
+import GetPersonByCpfService from "../domain/services/person/GetPersonByCpfService";
 
 const personRouter = Router();
 const createPersonService = new CreatePersonService();
