@@ -46,7 +46,7 @@ Isso executará todos os testes unitários presentes no projeto e exibirá os re
 
 #### Cria uma nova pessoa com base nos dados fornecidos no corpo da solicitação.
 
-```http
+```
   POST /person
 ```
 | Parâmetro   | Tipo       | Descrição                                   |
@@ -57,19 +57,19 @@ Isso executará todos os testes unitários presentes no projeto e exibirá os re
 
 #### Retorna a lista de todas as pessoas cadastradas.
 
-```http
+```
   GET /person
 ```
 
 #### Retorna os detalhes de uma pessoa com base no CPF fornecido.
 
-```http
+```
   GET /person/:cpf
 ```
 
 #### Cria um relacionamento entre duas pessoas com base nos CPFs fornecidos.
 
-```http
+```
   POST /relationship
 ```
 | Parâmetro   | Tipo       | Descrição                                   |
@@ -79,12 +79,12 @@ Isso executará todos os testes unitários presentes no projeto e exibirá os re
 
 #### Retorna uma lista de recomendações de amigos para a pessoa com o CPF fornecido.
 
-```http
+```
   GET /recommendations/:cpf
 ```
 #### Deleta todos os dados armazenados dos usuários e relacionamentos.
 
-```http
+```
   DELETE /clean
 ```
 Certifique-se de substituir :cpf nos endpoints acima pelos CPFs reais das pessoas.
